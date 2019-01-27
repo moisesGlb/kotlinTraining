@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    tools:context=".DemoActivity">
+
+    <EditText
+        android:id="@+id/etFrase"
+        android:layout_width="356dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/ingrese_la_frase_aqui"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnGO"
+        android:layout_width="238dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/ir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etFrase" />
+
+    <Button
+        android:id="@+id/btnFoto"
+        android:layout_width="243dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="147dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="149dp"
+        android:text="@string/tomar_foto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGO" />
+
+    <TextView
+        android:id="@+id/tvRta"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="192dp"
+        android:layout_marginEnd="164dp"
+        android:layout_marginBottom="73dp"
+        android:text="TextView"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFoto" />
+</android.support.constraint.ConstraintLayout>

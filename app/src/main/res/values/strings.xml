@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">DEMO APP</string>
+    <string name="ir">IR!</string>
+    <string name="tomar_foto">Tomar Foto</string>
+    <string name="respuesta">Ingrese Respuesta</string>
+    <string name="aceptar">ACEPTAR</string>
+    <string name="cancelar">CANCELAR</string>
+    <string name="hola">Hola:</string>
+    <string name="ingrese_la_frase_aqui">Ingrese su nombre aqui</string>
+</resources>

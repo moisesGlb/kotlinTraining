@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DEMO APP</string>
+    <string name="ir">GO!</string>
+    <string name="tomar_foto">Take a Picture</string>
+    <string name="respuesta">Enter your answer</string>
+    <string name="aceptar">OK</string>
+    <string name="cancelar">CANCEL</string>
+    <string name="hola">Hi:</string>
+    <string name="ingrese_la_frase_aqui">Put your name here</string>
+</resources>
