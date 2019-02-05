@@ -3,6 +3,7 @@ package com.moises.marceapp
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -43,16 +44,12 @@ class NombreActivity : AppCompatActivity() {
 
                 {
                     setResult(RESULT_CODE_CHANGE_ACTIVITY_BTN_CANCELAR,intent)
-
-                    com.moises.marceapp.NombreActivity.Companion.LOG.info("boton aceptar presionado. Iniciando Demo activity con result: "+RESULT_CODE_CHANGE_ACTIVITY_BTN_CANCELAR.toString())
                 }else
                 {
 
                     intent.putExtra("respuesta", etRespuesta?.text.toString())
 
                     setResult(RESULT_CODE_BTN_ACEPTAR,intent)
-
-                    com.moises.marceapp.NombreActivity.Companion.LOG.info("boton aceptar presionado. Iniciando Demo activity con result: "+RESULT_CODE_BTN_ACEPTAR.toString())
 
                 }
 
@@ -65,7 +62,7 @@ class NombreActivity : AppCompatActivity() {
 
             setResult(RESULT_CODE_CHANGE_ACTIVITY_BTN_CANCELAR,intent)
 
-            com.moises.marceapp.NombreActivity.Companion.LOG.info("boton aceptar presionado. Iniciando Demo activity con result: "+RESULT_CODE_CHANGE_ACTIVITY_BTN_CANCELAR.toString())
+            NombreActivity.LOG.info("boton aceptar presionado. Iniciando Demo activity con result: "+RESULT_CODE_CHANGE_ACTIVITY_BTN_CANCELAR.toString())
 
             finish()
         }
@@ -74,5 +71,26 @@ class NombreActivity : AppCompatActivity() {
 
     companion object {
         val LOG = Logger.getLogger(NombreActivity::class.java.name)
+    }
+
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+
+        val userText: String  = tvNombre?.text.toString()
+
+        outState?.putCharSequence("savedText", userText)
+
+        NombreActivity.LOG.info("onSaveInstanceState: "+ userText)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+
+        val userText = savedInstanceState?.getCharSequence("savedText")
+
+        NombreActivity.LOG.info("onRestoreInstanceState: "+ userText)
+
+        tvNombre?.text =userText
     }
 }
