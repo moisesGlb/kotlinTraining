@@ -15,5 +15,5 @@ Traning Android Mi Cuenta Team App
 
 Grafico 1:
 
-![](https://raw.githubusercontent.com/moisesGlb/kotlinTraining/clase1/app/src/main/res/drawable/diagranaEjercicio.png)
+![](https://github.com/moisesGlb/kotlinTraining/blob/clase2/app/src/main/res/drawable/graphics.png)
 
