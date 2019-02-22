@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+
+    <ImageView
+        android:id="@+id/ivImage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerVertical="true"
+        android:padding="5dp" />
+
+
+
+    <TextView
+          android:id="@+id/tvTitle"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="10dp"
+          android:layout_marginStart="10dp"
+          android:layout_toEndOf="@+id/ivImage"
+          android:layout_toRightOf="@+id/ivImage"
+          android:text="Titulo muy largo que se comprime en 3 puntos..."
+          android:textStyle="bold" />
+
+    <TextView
+          android:id="@+id/tvAuthor"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/tvTitle"
+          android:layout_marginTop="5dp"
+          android:layout_marginLeft="10dp"
+          android:layout_marginStart="10dp"
+          android:layout_toEndOf="@+id/ivImage"
+          android:layout_toRightOf="@+id/ivImage"
+          android:text="Juan Esmit"
+          android:textStyle="bold" />
+
+    <TextView
+      android:id="@+id/tvComments"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/tvAuthor"
+      android:layout_marginLeft="10dp"
+      android:layout_marginStart="10dp"
+      android:layout_marginTop="5dp"
+      android:layout_toEndOf="@+id/ivImage"
+      android:layout_toRightOf="@+id/ivImage"
+      android:text="209 Comments" />
+
+    <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvComments"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/ivImage"
+            android:layout_toRightOf="@+id/ivImage"
+            android:text="209 Comments" />
+
+
+</RelativeLayout>
