@@ -29,11 +29,11 @@ https://www.reddit.com/top.json
 
 Lista de posts: 
 
-![](https://pandao.github.io/editor.md/examples/images/4.jpg)
+![](https://raw.githubusercontent.com/moisesGlb/kotlinTraining/clase3/app/src/main/res/mipmap-anydpi-v26/Screenshot_20190222-123411.png)
 
 
 
 Detalle del post：
 
-![](https://pandao.github.io/editor.md/examples/images/8.jpg)
+![](https://raw.githubusercontent.com/moisesGlb/kotlinTraining/clase3/app/src/main/res/mipmap-anydpi-v26/Screenshot_20190222-123438.png)
 
