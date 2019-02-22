@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         //Log.d("Nombre clase: ", "Probando logs")
 
-        swipeRefreshLayout = findViewById(R.id.swipePost)
+        swipeRefreshLayout = this.findViewById(R.id.swipePost)
 
 
         adapter = PostAdapter(this)
