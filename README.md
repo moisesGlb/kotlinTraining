@@ -1,7 +1,8 @@
 Ejercicio Clase3 Curso Kotlin
 =============
 
-##Features
+Features
+-------------
 
 Temas vistos:
 - Repaso de Activity Lifecycle e Intent, Results.
@@ -24,16 +25,16 @@ API a consumir:
 https://www.reddit.com/top.json
 
 
+Imagenes
+-------------
 
-##Imagenes
-
-Lista de posts: 
-
-![](https://raw.githubusercontent.com/moisesGlb/kotlinTraining/clase3/app/src/main/res/mipmap-anydpi-v26/Screenshot_20190222-123411.png)
+Lista de posts  | Detalle del post
+------------- | -------------
+![](https://raw.githubusercontent.com/moisesGlb/kotlinTraining/clase3/app/src/main/res/mipmap-anydpi-v26/Screenshot_20190222-123411.png)  | ![](https://raw.githubusercontent.com/moisesGlb/kotlinTraining/clase3/app/src/main/res/mipmap-anydpi-v26/Screenshot_20190222-123438.png)
 
 
 
-Detalle del post：
 
-![](https://raw.githubusercontent.com/moisesGlb/kotlinTraining/clase3/app/src/main/res/mipmap-anydpi-v26/Screenshot_20190222-123438.png)
+
+
 
