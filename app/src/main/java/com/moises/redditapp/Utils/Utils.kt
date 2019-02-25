@@ -1,4 +1,4 @@
-package com.moises.redditapp
+package com.moises.redditapp.Utils
 
 import android.util.Log
 import java.text.SimpleDateFormat

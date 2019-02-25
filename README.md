@@ -30,7 +30,7 @@ Imagenes
 
 Lista de posts  | Detalle del post
 ------------- | -------------
-![](https://raw.githubusercontent.com/moisesGlb/kotlinTraining/clase3/app/src/main/res/mipmap-anydpi-v26/Screenshot_20190222-123411.png)  | ![](https://raw.githubusercontent.com/moisesGlb/kotlinTraining/clase3/app/src/main/res/mipmap-anydpi-v26/Screenshot_20190222-123438.png)
+![](https://raw.githubusercontent.com/moisesGlb/kotlinTraining/clase3/app/src/main/res/mipmap-anydpi-v26/redit_post_list.png)  | ![](https://raw.githubusercontent.com/moisesGlb/kotlinTraining/clase3/app/src/main/res/mipmap-anydpi-v26/redit_post_detail.png)
 
 
 

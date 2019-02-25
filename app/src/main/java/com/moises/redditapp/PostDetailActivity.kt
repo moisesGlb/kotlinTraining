@@ -8,8 +8,8 @@ import android.os.PersistableBundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
+import com.moises.redditapp.Utils.Utils
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_post_detail.*
 
 class PostDetailActivity : AppCompatActivity() {
 

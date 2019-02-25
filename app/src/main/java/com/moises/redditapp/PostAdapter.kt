@@ -3,74 +3,89 @@ package com.moises.redditapp
 import android.content.Context
 import android.content.Intent
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.moises.redditapp.service.RedditPostData
+import com.google.gson.Gson
+import com.moises.redditapp.Utils.Utils
+import com.moises.redditapp.model.RedditPostData
+import com.moises.redditapp.service.ApiService
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_row_post.view.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.*
 
 
-class PostAdapter(val context: Context) : RecyclerView.Adapter<PostAdapter.ViewHolder>(){
+class PostAdapter(val context: Context, apiService: ApiService) : RecyclerView.Adapter<PostAdapterViewHolder>(){
 
-    var items: List<RedditPostData> = ArrayList<RedditPostData>()
+    private var apiService: ApiService? = apiService
+
+    private var items: List<RedditPostData>? = null
+
+    var utils: Utils? = Utils()
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostAdapterViewHolder {
         val view: View = LayoutInflater.from(context).inflate(R.layout.item_row_post,parent,false)
 
-        return ViewHolder(view)
+        return PostAdapterViewHolder(view)
     }
 
     override fun getItemCount(): Int {
-        return items.size
+
+        return if  (items.isNullOrEmpty()) {
+            0
+        } else{
+            items!!.size
+        }
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        var post = items[position].data
+    override fun onBindViewHolder(holderPostAdapter: PostAdapterViewHolder, position: Int) {
+        var post = items!![position].data
 
-       holder.bindValues(post)
+        Picasso.get().load(post.thumbnail).into(holderPostAdapter.itemView.ivImage)
+        holderPostAdapter.itemView.tvTitle.text = post.title
+        holderPostAdapter.itemView.tvAuthor.text = "Author: " + post.author
+        holderPostAdapter.itemView.tvComments.text = post.num_comments.toString()+" comments"
+
+        var str = utils?.lessOrMorethan24hs(utils!!.convertLongToTime(post.created))
+
+        holderPostAdapter.itemView.tvDate.text = str
+
+        holderPostAdapter.itemView.setOnClickListener {
+
+            val intent = Intent(holderPostAdapter.itemView.context,PostDetailActivity::class.java)
+
+            intent.putExtra("titulo",post!!.title)
+            intent.putExtra("urlImagen",post!!.url)
+            intent.putExtra("author",post!!.author)
+            intent.putExtra("num_comments",post!!.num_comments.toString())
+            intent.putExtra("created",post!!.created)
+
+            holderPostAdapter.itemView.context.startActivity(intent)
+        }
     }
 
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-
-
-        var postActual: RedditPostData? = null
-
-        init {
-
-            itemView.setOnClickListener {
-
-                val intent = Intent(itemView.context,PostDetailActivity::class.java)
-
-                intent.putExtra("titulo",postActual!!.title)
-                intent.putExtra("urlImagen",postActual!!.url)
-                intent.putExtra("author",postActual!!.author)
-                intent.putExtra("num_comments",postActual!!.num_comments.toString())
-                intent.putExtra("created",postActual!!.created)
-
-                itemView.context.startActivity(intent)
+    fun getReditPosts(){
+        apiService!!.getAllPost().enqueue(object: Callback<RedditPostData>{
+            override fun onResponse(call: Call<RedditPostData>?, response: Response<RedditPostData>?) {
+                var reditPostdata = response!!.body()
+                items = reditPostdata!!.data.children
+               // Log.i("RedditApp", Gson().toJson(items))
+                Log.i("RedditApp", "LLAMO AL SERVICIO Y OBTUVO LOS DATOS PAPAI")
+                notifyDataSetChanged()
             }
+            override fun onFailure(call: Call<RedditPostData>?, t: Throwable?) {
+                t?.printStackTrace()
+                notifyDataSetChanged()
+            }
+        })
 
-        }
-
-        fun bindValues(post: RedditPostData) {
-
-            Picasso.get().load(post.thumbnail).into(itemView.ivImage)
-            itemView.tvTitle.text = post.title
-            itemView.tvAuthor.text = "Author: " + post.author
-            itemView.tvComments.text = post.num_comments.toString()+" comments"
-
-            var utils: Utils? = Utils()
-
-            var str = utils?.lessOrMorethan24hs(utils?.convertLongToTime(post.created))
-
-            itemView.tvDate.text = str
-
-
-            postActual = post
-        }
     }
+
 }
+

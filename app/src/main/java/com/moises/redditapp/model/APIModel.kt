@@ -1,4 +1,4 @@
-package com.moises.redditapp.service
+package com.moises.redditapp.model
 
 
  class RedditPostData(
