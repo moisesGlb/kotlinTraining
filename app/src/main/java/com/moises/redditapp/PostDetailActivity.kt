@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.moises.redditapp.Utils.Utils
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.item_row_post.view.*
 
 class PostDetailActivity : AppCompatActivity() {
 
@@ -22,8 +23,6 @@ class PostDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_post_detail)
-
-        //getSupportActionBar()!!.hide()
 
         tvTitle = findViewById(R.id.tvTitleDetail)
         imageview = findViewById(R.id.imageViewDetail)
@@ -42,11 +41,12 @@ class PostDetailActivity : AppCompatActivity() {
             val image = savedInstanceState.getParcelable<Bitmap>("image")
             imageview?.setImageBitmap(image)
 
+
         }else{
             Picasso.get().load(intent.extras!!.getString("urlImagen"))
                 //.resize(50,50)
-                .error(R.drawable.error_banner)
-                .placeholder(R.drawable.toolbar_background)
+                .error(R.drawable.icon)
+                .placeholder(R.color.placeholder_grey)
                 .into(imageview)
         }
 

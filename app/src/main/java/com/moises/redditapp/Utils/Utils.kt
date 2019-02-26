@@ -25,8 +25,8 @@ import java.util.*
          var ret = ""
          val fechaActual: Date = Date()
 
-         Log.d("Utils", "fechaPublicacion : $fechaPublicacion")
-         Log.d("Utils", "fechaActual : $fechaActual")
+         Log.d("Utils", "publish Date : $fechaPublicacion")
+         Log.d("Utils", "Actual Date : $fechaActual")
 
          var diferencia = fechaActual.time - fechaPublicacion.time
 
@@ -43,8 +43,8 @@ import java.util.*
          diferencia = diferencia % horasMilli
 
 
-         ret = if (horasTranscurridos < 24) "hace $horasTranscurridos horas"
-               else "hace $diasTranscurridos dias"
+         ret = if (horasTranscurridos < 24) "$horasTranscurridos hours ago"
+               else "$diasTranscurridos days ago"
 
 
 

@@ -10,3 +10,10 @@ package com.moises.redditapp.model
       val num_comments: Int,
       val url: String,
       val created: Long)
+
+
+class RedditDataResponse(
+     val redditPostData: RedditPostData,
+     val after: String?,
+     val before: String?
+)

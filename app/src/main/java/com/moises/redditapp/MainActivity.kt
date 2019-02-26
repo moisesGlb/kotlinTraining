@@ -11,9 +11,12 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-   // private var swipeRefreshLayout: SwipeRefreshLayout? = null
+    private var swipeRefreshLayout: SwipeRefreshLayout? = null
     private var adapter: PostAdapter? = null
+
     private val apiServiceImp = com.moises.redditapp.service.ApiServiceImp()
+
+    private var apiService: ApiService? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,24 +24,30 @@ class MainActivity : AppCompatActivity() {
 
         val layoutManager = LinearLayoutManager(this)
 
-
         layoutManager.orientation = LinearLayoutManager.VERTICAL
 
         rvPost.layoutManager = layoutManager
 
         rvPost!!.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
 
-        var serviceCall: ApiService = apiServiceImp.commonServiceCall()
+        apiService = apiServiceImp.commonServiceCall()
 
-        adapter = PostAdapter(this, serviceCall)
+        adapter = PostAdapter(this, apiService!!)
 
         rvPost.adapter = adapter
 
-    }
 
-    override fun onResume() {
-        super.onResume()
+
+
         adapter!!.getReditPosts()
+
+        // Logica pull to refreshh
+       /* swipeRefreshLayout!!.setOnRefreshListener(SwipeRefreshLayout.OnRefreshListener {
+            adapter!!.getReditPosts()
+
+        })*/
+        // FIN Logica pull to refresh.
+
     }
 
 
