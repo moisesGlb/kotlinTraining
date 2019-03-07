@@ -52,7 +52,7 @@ class ProductListAdapter(val context: Context): RecyclerView.Adapter<ProductList
 
             intent.putExtra("id",product.id)
             intent.putExtra("title",product.title)
-            intent.putExtra("price",product.price)
+            intent.putExtra("price",product.price.toString())
 
             holder.itemView.context.startActivity(intent)
         }

@@ -47,7 +47,9 @@ class ProductActivity : AppCompatActivity() {
         id = intent.extras!!.getString("id")
 
         title!!.text = intent.extras!!.getString("title")
-        price!!.text = intent.extras!!.getString("price")
+
+        price!!.text = "$"+ intent.extras!!.getString("price")
+
 
         getDescription(id)
 
