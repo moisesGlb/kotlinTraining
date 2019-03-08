@@ -5,12 +5,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiSearchImp {
 
+    private val BASE_URL: String = "https://api.mercadolibre.com"
+
     var retrofit: Retrofit? = null
 
     fun mainServiceCall(): ApiSearchInterface  {
 
         retrofit = Retrofit.Builder()
-            .baseUrl("https://api.mercadolibre.com")
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

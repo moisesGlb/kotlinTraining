@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<FrameLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,52 +7,98 @@
         android:layout_height="match_parent"
         tools:context=".ProductActivity">
 
-    <ScrollView
+    <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="@dimen/poster_hero_height"
+            android:layout_marginBottom="@dimen/activity_margin_content"
+            android:layout_marginEnd="@dimen/activity_margin_half"
+            android:layout_marginLeft="@dimen/activity_margin_half"
+            android:layout_marginRight="@dimen/activity_margin_half"
+            android:layout_marginStart="@dimen/activity_margin_half"
+            app:cardBackgroundColor="@color/placeholder_grey"
+            app:cardCornerRadius="3dp"
+            app:cardPreventCornerOverlap="false">
+
+        <ProgressBar
+                android:id="@+id/imgProgress"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="@dimen/activity_margin_content"
+                android:layout_height="@dimen/activity_margin_content"
+                android:layout_gravity="center"
+                android:theme="@style/CircularProgress"/>
+
+        <ImageView
+                android:id="@+id/ivImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
 
-        <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:orientation="vertical">
-
-            <ImageView
+            <LinearLayout
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/imageViewDetail"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop" android:background="@drawable/background_default"/>
+                    android:layout_height="wrap_content">
 
-            <TextView
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:text="aifon x (equis) - joya nunca tacsi"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvTitleDetail"
-                    android:textStyle="bold"/>
+                <TextView
+                        android:layout_marginLeft="10dp"
+                        android:text="aifon x pa (equis) - joya nunca tacsi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvTitleDetail"
+                        android:textStyle="bold"/>
 
-            <TextView
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:text="$50000"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvPriceDetail"
-                    android:textStyle="bold"/>
+                <TextView
+                        android:layout_marginTop="@dimen/paddingItemDecorationDefault"
+                        android:layout_marginLeft="@dimen/paddingItemDecorationDefault"
+                        android:text="$50000"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvPriceDetail"
+                        android:textStyle="bold"/>
 
-            <TextView
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:text="Es el aifon x directo desde recoleta viene con funda (de onda) como se muestra en la foto"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvDescription"
-                    android:textStyle="bold"/>
+                <TextView
+                        android:layout_marginTop="@dimen/paddingItemDecorationDefault"
+                        android:layout_marginLeft="@dimen/paddingItemDecorationDefault"
+                        android:text="@string/ProductDetailDescriptionTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"/>
 
-        </LinearLayout>
+                <ProgressBar
+                        android:indeterminateDrawable="@drawable/progress"
+                        android:layout_width="20dp"
+                        android:layout_height="@dimen/activity_margin_content"
+                        android:layout_gravity="center"
+                        android:id="@+id/descriptionProgresBar"/>
+                <TextView
+                        android:layout_marginTop="@dimen/paddingItemDecorationDefault"
+                        android:layout_marginLeft="@dimen/paddingItemDecorationDefault"
+                        android:text="Es el aifon x directo desde recoleta viene con funda (de onda) como se muestra en la foto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvDescription"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
+            </LinearLayout>
+        </ScrollView>
 
-    </ScrollView>
+    </LinearLayout>
 
 
-</android.support.design.widget.CoordinatorLayout>
+
+
+
+
+</FrameLayout>

@@ -18,7 +18,6 @@ class ProductListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_de_productos)
 
-
         recyclerView= findViewById(R.id.rvListaProductos)
 
         layoutManager = LinearLayoutManager(this)
@@ -35,6 +34,7 @@ class ProductListActivity : AppCompatActivity() {
 
         var string = intent.getStringExtra("filtroBusqueda")
 
-        adapter!!.getListaProductos(string)
+       adapter!!.getListaProductos(string)
     }
+
 }

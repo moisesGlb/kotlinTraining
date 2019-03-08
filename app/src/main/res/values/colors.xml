@@ -8,5 +8,6 @@
     <color name="placeholder_grey_20">#33AAADC4</color>
     <color name="error_red">#CD5C5C</color>
     <color name="black">#696969</color>
+    <color name="dark_black">#000000</color>
 </resources>
 

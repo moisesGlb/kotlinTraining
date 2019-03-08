@@ -10,15 +10,19 @@ import android.view.ViewGroup
 import com.google.gson.Gson
 import com.moises.mercadolibreapp.model.Product
 import com.moises.mercadolibreapp.model.SearchResponse
+import com.moises.mercadolibreapp.presenter.ProductPresenter
 import com.moises.mercadolibreapp.service.ApiSearchImp
 import com.moises.mercadolibreapp.service.ApiSearchInterface
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_row_post.view.*
+import kotlinx.coroutines.Job
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class ProductListAdapter(val context: Context): RecyclerView.Adapter<ProductListViewHolder>() {
+
+
 
     private val apiSearchImp: ApiSearchImp = ApiSearchImp()
     private val apiSearchInterface: ApiSearchInterface = apiSearchImp.mainServiceCall()
@@ -59,6 +63,9 @@ class ProductListAdapter(val context: Context): RecyclerView.Adapter<ProductList
 
 
     }
+
+
+
 
 
     fun getListaProductos(busqueda: String){
