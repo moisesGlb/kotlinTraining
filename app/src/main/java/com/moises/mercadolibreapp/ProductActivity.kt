@@ -19,7 +19,7 @@ class ProductActivity : AppCompatActivity(), ProductController.View {
 
     private lateinit var myJob: Job
 
-    private val productPresenter = ProductPresenter(this@ProductActivity)
+    private val productPresenter = ProductPresenter(this)
 
     private var imgUrl: String? = null
 
@@ -56,10 +56,8 @@ class ProductActivity : AppCompatActivity(), ProductController.View {
         myJob = CoroutineScope(Dispatchers.IO).launch {
             withContext(Dispatchers.Main) {
                 productPresenter.loadImg(id)
-
             }
         }
-
 
     }
 
@@ -74,6 +72,8 @@ class ProductActivity : AppCompatActivity(), ProductController.View {
         Toast.makeText(this, "el servicio obtuvo la imagen: "+imgSrchLst.pictures.size, Toast.LENGTH_SHORT).show()
 
         imgUrl = imgSrchLst.pictures[0].url
+
+        setImage(imgUrl!!)
 
     }
 

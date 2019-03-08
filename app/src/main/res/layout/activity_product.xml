@@ -35,10 +35,10 @@
     </android.support.v7.widget.CardView>
 
     <LinearLayout
+            android:layout_marginTop="@dimen/poster_hero_height"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:background="@android:color/white"
+            android:layout_gravity="top"
             android:orientation="vertical">
 
         <ScrollView
@@ -52,7 +52,8 @@
                     android:layout_height="wrap_content">
 
                 <TextView
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="@dimen/paddingItemDecorationDefault"
+                        android:layout_marginLeft="@dimen/paddingItemDecorationDefault"
                         android:text="aifon x pa (equis) - joya nunca tacsi"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -77,6 +78,7 @@
                         android:textStyle="bold"/>
 
                 <ProgressBar
+                        android:layout_marginTop="@dimen/paddingItemDecorationDefault"
                         android:indeterminateDrawable="@drawable/progress"
                         android:layout_width="20dp"
                         android:layout_height="@dimen/activity_margin_content"
@@ -92,13 +94,9 @@
                         android:textStyle="bold"
                         android:visibility="gone"/>
             </LinearLayout>
+
         </ScrollView>
 
     </LinearLayout>
-
-
-
-
-
 
 </FrameLayout>
