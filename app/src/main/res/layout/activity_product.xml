@@ -47,6 +47,7 @@
 
 
             <LinearLayout
+                    android:layout_marginTop="@dimen/paddingItemDecorationDefault"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -79,9 +80,8 @@
 
                 <ProgressBar
                         android:layout_marginTop="@dimen/paddingItemDecorationDefault"
-                        android:indeterminateDrawable="@drawable/progress"
                         android:layout_width="20dp"
-                        android:layout_height="@dimen/activity_margin_content"
+                        android:layout_height="21dp"
                         android:layout_gravity="center"
                         android:id="@+id/descriptionProgresBar"/>
                 <TextView

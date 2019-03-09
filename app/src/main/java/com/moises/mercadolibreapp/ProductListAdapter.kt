@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import com.google.gson.Gson
 import com.moises.mercadolibreapp.model.Product
 import com.moises.mercadolibreapp.model.SearchResponse
@@ -14,6 +15,7 @@ import com.moises.mercadolibreapp.presenter.ProductPresenter
 import com.moises.mercadolibreapp.service.ApiSearchImp
 import com.moises.mercadolibreapp.service.ApiSearchInterface
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_lista_de_productos.view.*
 import kotlinx.android.synthetic.main.item_row_post.view.*
 import kotlinx.coroutines.Job
 import retrofit2.Call
@@ -65,9 +67,6 @@ class ProductListAdapter(val context: Context): RecyclerView.Adapter<ProductList
     }
 
 
-
-
-
     fun getListaProductos(busqueda: String){
 
         apiSearchInterface.getProducts(busqueda).enqueue(object: Callback<SearchResponse> {
@@ -85,6 +84,7 @@ class ProductListAdapter(val context: Context): RecyclerView.Adapter<ProductList
                 Log.i("MercadoLibreApp", "Datos obtenidos del servicio de mercado libre: "+items!!.size.toString())
                 Log.d("MercadoLibreApp","el json obtenindo: "+ Gson().toJson(items!!).toString())
                 notifyDataSetChanged()
+
 
             }
 

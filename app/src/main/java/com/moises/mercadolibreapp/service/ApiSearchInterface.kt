@@ -20,6 +20,6 @@ interface ApiSearchInterface {
     fun getProducts(@Query("q")query: String): Call<SearchResponse>
 
     @GET("/items/{id}/description")
-    fun getDescription(@Path("id")id: String): Call<ProductDescription>
+    fun getDescription(@Path("id")id: String): Deferred<Response<ProductDescription>>
 
 }

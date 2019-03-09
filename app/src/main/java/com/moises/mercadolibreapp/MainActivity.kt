@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
                 textoBusqueda = entrada!!.text.toString()
 
                 if(!textoBusqueda.isNullOrEmpty()) {
+                    entrada!!.text.clear()
 
                     val intent = Intent(this@MainActivity,ProductListActivity::class.java)
 
