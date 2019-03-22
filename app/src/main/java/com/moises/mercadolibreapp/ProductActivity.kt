@@ -31,7 +31,6 @@ class ProductActivity : AppCompatActivity(), ProductController.View {
     private var title: TextView? = null
     private var price: TextView? = null
     private var description: TextView? = null
-    private var imageProgressBar: ProgressBar? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,11 +38,10 @@ class ProductActivity : AppCompatActivity(), ProductController.View {
 
         productPresenter.controller = this
 
-        imageView = findViewById(R.id.ivImage)
+        imageView = findViewById(R.id.ivImageDetail)
         title = findViewById(R.id.tvTitleDetail)
         price = findViewById(R.id.tvPriceDetail)
         description = findViewById(R.id.tvDescription)
-        imageProgressBar = findViewById(R.id.imgProgress)
         descriptionProgressBar = findViewById(R.id.descriptionProgresBar)
 
         id = intent.extras!!.getString("id")
@@ -67,7 +65,6 @@ class ProductActivity : AppCompatActivity(), ProductController.View {
     }
 
     override fun onLoadImgSuccessful(imgSrchLst: imgSearchList) {
-        imageProgressBar!!.visibility = View.GONE
 
         imgUrl = imgSrchLst.pictures[0].url
 
@@ -76,7 +73,6 @@ class ProductActivity : AppCompatActivity(), ProductController.View {
     }
 
     override fun onLoadImgFailed(message: String) {
-        imageProgressBar!!.visibility = View.GONE
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
@@ -96,7 +92,6 @@ class ProductActivity : AppCompatActivity(), ProductController.View {
     private fun setImage(url: String){
 
         if(!url.isNullOrEmpty()){
-            imageProgressBar!!.visibility = View.GONE
 
             if (imageView != null){
                 Picasso.get().load(url)

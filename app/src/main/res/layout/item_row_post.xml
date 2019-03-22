@@ -10,7 +10,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/activity_margin_half"
-            app:cardBackgroundColor="@color/placeholder_grey"
+            app:cardBackgroundColor="@color/background"
             app:cardCornerRadius="3dp"
             app:cardPreventCornerOverlap="false">
 

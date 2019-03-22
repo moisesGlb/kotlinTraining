@@ -7,29 +7,17 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-
-    <LinearLayout
-            android:orientation="vertical"
+    <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_bar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:ignore="MissingConstraints">
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
 
+        <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
-        <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/etEntrada"/>
-        <Button
-                android:text="Buscar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/btnBuscar"/>
-        <Button
-                android:text="Limpiar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/btnBorrar"/>
-    </LinearLayout>
+    </android.support.design.widget.AppBarLayout>
 </android.support.constraint.ConstraintLayout>
