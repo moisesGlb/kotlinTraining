@@ -5,7 +5,8 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".activities.MainActivity">
+
 
     <android.support.design.widget.AppBarLayout
             android:id="@+id/app_bar"
@@ -20,4 +21,60 @@
                 app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
     </android.support.design.widget.AppBarLayout>
+    <LinearLayout
+            android:id="@+id/splashContainer"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/app_bar"
+            android:layout_toEndOf="@+id/app_bar" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/app_bar"
+            android:padding="12dp">
+
+        <ImageView
+                android:background="@drawable/ic_local_mall_black_24dp"
+                android:layout_width="203dp"
+                android:layout_height="209dp"
+                android:id="@+id/ivSplash"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginTop="@dimen/margin_content"/>
+        <TextView
+                android:text="@string/splashStartText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvSplash1"
+                style="@style/SplashTextStyle"/>
+        <TextView
+                android:id="@+id/tvSplash2"
+                android:text="@string/splashStartText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/SplashTextStyle"/>
+
+        <Button
+                android:text="@string/btn_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnRetry"
+                android:layout_marginTop="@dimen/margin_content"
+                android:layout_gravity="center_horizontal"
+                tools:background="@color/background"
+                android:textColor="@color/secondary_text"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/tvSplash2"
+                android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:visibility="gone">
+    </android.support.v7.widget.RecyclerView>
+
+
 </android.support.constraint.ConstraintLayout>

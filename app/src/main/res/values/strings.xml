@@ -19,6 +19,21 @@
     <string name="search_hint">Type and Search</string>
     <string name="menu_search">Search</string>
 
+    <string name="warn_no_adapter">Error</string>
+
+    <string name="splashStartText">Comienza a buscar el producto que quieras.</string>
+    <string name="splashStartText2">Nosotros hacemos el resto</string>
+
+    <string name="splashErrorText">Hubo un error procesando tu busqueda</string>
+    <string name="splashErrorText2">Puedes reintentar o buscar otro producto</string>
+
+
+    <string name="splashNoResultText">Tu Busqueda no produjo ningun resultado</string>
+    <string name="splashNoResultText2">Intenta con otras palabras</string>
+
+
     //string for behavior... do not remove
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="btn_error">Reintentar</string>
+
 </resources>
