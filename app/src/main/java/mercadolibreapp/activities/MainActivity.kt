@@ -79,25 +79,16 @@ class MainActivity: AppCompatActivity()  {
         return true
     }
 
-
-    fun showStartSplash(){
-        splashcontainer.visibility = View.VISIBLE
-        recyclerView.visibility = View.GONE
-        showSplash(this.getDrawable(R.drawable.shoping_basket),
-                   this.getString(R.string.splashStartText),
-                   this.getString(R.string.splashStartText2),false)
-    }
-
     fun showEmptyResultSplash(){
         recyclerView.visibility = View.GONE
-        showSplash(this.getDrawable(R.drawable.search),
+        showSplash(this.getDrawable(R.drawable.ic_search_black_24dp),
                    this.getString(R.string.splashNoResultText),
                    this.getString(R.string.splashNoResultText2),false)
     }
 
     fun showErrorSplash(){
         recyclerView.visibility = View.GONE
-        showSplash(this.getDrawable(R.drawable.error),
+        showSplash(this.getDrawable(R.drawable.ic_error_outline_black_24dp),
                    this.getString(R.string.splashErrorText),
                    this.getString(R.string.splashErrorText2),true)
     }
