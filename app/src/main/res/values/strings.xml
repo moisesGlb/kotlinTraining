@@ -3,16 +3,18 @@
 
     <string name="LOG_TAG">MercadoLibreApp</string>
 
-    <string name="connection_message">No hay conexión a internet. Fijate tengas conexión wi-fi o de datos y proba de nuevo.</string>
+    <string name="connection_message">No hay conexión a internet. Fijate tengas conexión wi-fi o de datos y proba de
+        nuevo.
+    </string>
     <string name="time_out_message">Request TimeOut (tu conexion es horrible o no tenes mas datos)</string>
     <string name="connection_lost_message">Se perdio la conexion a internete(ojo con la rima)</string>
     <string name="default_error_message">Ocurrió un error, por favor intentelo nuevamente</string>
     <string name="server_error_message">Ocurrió un error con el servidor, intenta mas tarde</string>
 
-    <string name="ProductDetailDescriptionTitle">Descripcion del vendedor:</string>
+    <string name="ProductDetailDescriptionTitle">Descripción</string>
 
     <string name="title_activity_main">Mercado Libre</string>
-    <string name="title_activity_detalle_producto">detalle producto</string>
+    <string name="title_activity_detalle_producto">Producto</string>
 
     <string name="search_result">Search Result!</string>
     <string name="action_settings">Settings</string>
@@ -33,7 +35,9 @@
 
 
     //string for behavior... do not remove
-    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">
+        android.support.design.widget.AppBarLayout$ScrollingViewBehavior
+    </string>
     <string name="btn_error">Reintentar</string>
 
 </resources>

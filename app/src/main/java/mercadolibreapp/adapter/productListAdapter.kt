@@ -16,6 +16,7 @@ import com.moises.mercadolibreapp.service.ApiSearchImp
 import com.moises.mercadolibreapp.service.ApiSearchInterface
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_row_post.view.*
+import mercadolibreapp.activities.ProductActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -49,25 +50,22 @@ class productListAdapter(val context: Context, mainActivity: MainActivity) : Rec
     override fun onBindViewHolder(holder: ProductListViewHolder, position: Int) {
         var product: Product = items!![position]
 
-        Picasso.get().load(product.thumbnail.toString()).error(R.drawable.error).into(holder.itemView.ivThumbnail)
+        Picasso.get().load(product.thumbnail.toString()).into(holder.itemView.ivThumbnail)
 
         holder.itemView.tvTitle.text = product.title
         holder.itemView.tvPrice.text = "$" + product.price.toString()
 
-       /* holder.itemView.splashContainer.visibility=View.GONE
-        holder.itemView.recyclerView.visibility=View.VISIBLE*/
 
+         holder.itemView.setOnClickListener {
 
-        /* holder.itemView.setOnClickListener {
-
-             val intent = Intent(holder.itemView.context,ProductActivity::class.java)
+             val intent = Intent(holder.itemView.context, ProductActivity::class.java)
 
              intent.putExtra("id",product.id)
              intent.putExtra("title",product.title)
              intent.putExtra("price",product.price.toString())
 
              holder.itemView.context.startActivity(intent)
-        }*/
+        }
 
     }
 

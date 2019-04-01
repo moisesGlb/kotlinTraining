@@ -6,4 +6,10 @@
     <dimen name="thumb_height">75dp</dimen>
 
     <dimen name="app_bar_height">200dp</dimen>
+
+    <dimen name="text_min_margin">8dp</dimen>
+
+    <dimen name="detailImage">220dp</dimen>
+
+    <dimen name="standardPadding">10dp</dimen>
 </resources>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="mercadolibreapp.activities.ProductActivity">
+
+
+   <android.support.v4.widget.NestedScrollView android:layout_width="match_parent"
+                                               android:layout_height="wrap_content">
+
+      <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+         <ImageView android:id="@+id/ivProductdetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/detailImage"
+                    android:scaleType="centerCrop"/>
+
+         <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@+id/ivProductdetail"
+                 android:orientation="vertical">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_below="@+id/ivProductdetail"
+                    tools:style="@style/ProductDetailBase">
+
+               <TextView android:id="@+id/tvTitleProdDetail"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:text="Title"
+                         android:textStyle="bold"
+                         android:layout_marginTop="@dimen/standardPadding"
+                         android:layout_marginLeft="@dimen/standardPadding"
+                         android:textSize="15sp"/>
+
+               <TextView android:id="@+id/tvPriceDetail"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:text="Price"
+                         android:layout_marginTop="@dimen/standardPadding"
+                         android:layout_marginLeft="@dimen/standardPadding"
+                         android:layout_below="@+id/tvTitleProdDetail"
+                         android:textStyle="bold"
+                         android:textSize="20sp"/>
+            </LinearLayout>
+
+            <TextView android:id="@+id/tvDescriptionTitle"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="@string/ProductDetailDescriptionTitle"
+                      android:layout_marginTop="10dp"
+                      android:layout_marginLeft="10dp"
+                      android:layout_below="@+id/tvPrice"
+                      android:textStyle="bold"
+                      android:textSize="20sp"/>
+
+
+            <RelativeLayout
+                    tools:style="@style/productDetailDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvDescriptionTitle"
+                    android:paddingBottom="@dimen/standardPadding">
+
+               <ImageView
+                       android:id="@+id/imageQuotation"
+
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:background="@drawable/ic_receipt_black_24dp"
+                       android:layout_gravity="left"
+                       android:layout_marginTop="@dimen/standardPadding"
+                       android:layout_marginLeft="@dimen/standardPadding"
+                       android:layout_marginRight="@dimen/standardPadding"/>
+
+
+               <TextView android:id="@+id/tvDetailDescription"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_toRightOf="@+id/imageQuotation"
+                         android:layout_toEndOf="@+id/imageQuotation"
+                         android:layout_marginTop="@dimen/standardPadding"
+                         android:text="Descripcion bien picante"/>
+
+            </RelativeLayout>
+
+
+         </LinearLayout>
+
+
+
+      </LinearLayout>
+
+
+</android.support.v4.widget.NestedScrollView>
+
+</RelativeLayout>
